@@ -5,16 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.jfif">
     <link rel="stylesheet" href="style.css">
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     
     <title>Ondřej Hruška</title>
-    <style>
-        canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-    </style>
+    
 </head>
 <body> 
    
@@ -43,7 +36,7 @@
 
         <div class="mojeveci">
 
-            <div class="aboutMePreview" onclick="">
+            <div class="aboutMePreview">
                     O mě
             </div>
             <div class="contactsPreview">
@@ -60,7 +53,32 @@
     </div>
         
     
-   
+    <script>
+        const boxes = document.querySelectorAll('.mojeveci > div');
+
+        boxes.forEach(box => {
+            box.addEventListener('click', function(event) {
+                event.stopPropagation();
+
+                // Zrušit aktivní třídu z všech boxů a skrýt je
+                boxes.forEach(b => {
+                    b.classList.remove('active');
+                    b.style.display = 'none'; // Skrýt ostatní boxy
+                });
+
+                // Aktivní box a zobrazení
+                this.classList.add('active');
+                this.style.display = 'flex'; // Zobrazit aktivní box
+            });
+        });
+
+        document.addEventListener('click', function() {
+            boxes.forEach(box => {
+                box.classList.remove('active');
+                box.style.display = 'flex'; // Zobrazit všechny boxy znovu
+            });
+        });
+    </script>
     
     
 </body>

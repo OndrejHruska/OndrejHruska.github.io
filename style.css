@@ -1,28 +1,26 @@
- body {
-    background-color:black;
-}  
- /*rgb(135, 242, 250)*/
-.jmeno{
-width: 98vw;
-text-align: center;
-font-size: 5.7vw;
-height: 100vh;
-color: white;
-justify-content: center;
-display: flex;
-flex-wrap: wrap; /* Allow items to wrap */
-justify-content: center; /* Center items horizontally */
-align-items: center; /* Center items vertically */
+body {
+    background-color: black;
 }
+
+.jmeno {
+    width: 98vw;
+    text-align: center;
+    font-size: 5.7vw;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .layout {
     display: flex;
     flex: auto;
 }
 
-/* Ensure that the layout is in column direction for small screens */
 @media (max-width: 480px) {
     .layout {
-        flex-direction: column; /* Stack menu and content vertically */
+        flex-direction: column;
     }
 }
 
@@ -31,26 +29,24 @@ align-items: center; /* Center items vertically */
     width: 15vw;
     height: 100vh;
     display: flex;
-    flex-direction: column; /* Changed to column for better alignment */
-    justify-content: space-around; /* Evenly distribute items */
-    align-items: center; /* Center items horizontally */
-    /*background-color: brown;*/
-    font-size: 3.5vw; /* Unified font-size declaration */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 3.5vw;
     text-align: center;
-    border-radius: 10px; /* Add rounded corners to the menu */
+    border-radius: 10px;
 }
 
 .mojeveci {
     padding-left: 1%;
     color: white;
     width: 98vw;
-    height: 100vh; /* Fill the viewport */
+    height: 100vh;
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    /*background-color: rgb(139, 189, 40);*/
-    border-radius: 10px; /* Add rounded corners to the menu */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
 }
 
 .aboutMePreview,
@@ -58,108 +54,81 @@ align-items: center; /* Center items vertically */
 .projectsPreview,
 .tasksPreview {
     display: flex;
-    
     height: 45vh;
-    width: calc(48% - 2%); /* Adjust width to account for margin */
-    margin: 1%; /* Add margin for spacing */
-    border-radius: 10px; /* Add rounded corners to previews */
-    border: 1px solid rgb(255, 255, 255); /* Change border property to a solid line */
+    width: calc(48% - 2%);
+    margin: 1%;
+    border-radius: 10px;
+    border: 1px solid rgb(255, 255, 255);
     justify-content: center;
     align-items: center;
     font-size: 8vw;
-    transition: background-color 0.5s ease-in-out, width 0.5s ease-in-out, height 0.5s ease-in-out;
-    
-    
-    
+    transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    cursor: pointer; /* Změna kurzoru na pointer */
 }
+
 .aboutMePreview:hover,
 .contactsPreview:hover,
 .projectsPreview:hover,
 .tasksPreview:hover {
-    
-    
-    width: calc(48% - 2%);    
-    display: flex;  
-  
-    margin: 1%; 
-    border-radius: 10px; 
-    border: 1px solid black; 
-    justify-content: center;
-    align-items: center;
-    font-size: 8vw;
     background-color: darkcyan;
-    transition: ease-in-out 1s;
-    
-    
-    
+    /*transform: scale(1.05); /* Zvětšení divu při hoveru */
 }
 
-
+.active {
+    position:static;
+    top: 50%;
+    left: 50%;
+    /*transform: translate(-50%, -50%); /* Centrování */
+    width: 80vw; /* Šířka zvětšeného divu */
+    height: 90vh; /* Výška zvětšeného divu */
+    background-color: darkcyan; /* Pozadí, když je div aktivní */
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertikální vycentrování obsahu */
+    align-items: center; /* Horizontální vycentrování obsahu */
+    transition: all 0.5s ease-in-out;
+}
 
 /* Responsive styles */
 @media (max-width: 768px) {
     .menu {
-        width: 30vw; /* Increase menu width on smaller screens */
-        font-size: 4vw; /* Slightly increase font size */
+        width: 30vw;
+        font-size: 4vw;
     }
-    
+
     .mojeveci {
-        width: 90vw; /* Increase width of the main content */
+        width: 90vw;
     }
-    
+
     .aboutMePreview,
     .contactsPreview,
     .projectsPreview,
     .tasksPreview {
-        width: calc(90% - 2%); /* Make each item take more width */
-        height: 30vh; /* Adjust height for smaller screens */
-    }
-    .aboutMePreview:hover,
-    .contactsPreview:hover,
-    .projectsPreview:hover,
-    .tasksPreview:hover {    
-    
-        width: calc(90% - 2%); /* Make each item take more width */
-        height: 30vh; /* Adjust height for smaller screens */
-    background-color: darkcyan;
-    transition: ease-in-out 1s;
+        width: calc(90% - 2%);
+        height: 30vh;
     }
 }
 
 @media (max-width: 480px) {
     .menu {
-        width: 98vw; /* Full width for very small screens */
-        height: auto; /* Allow menu height to adjust */
-        font-size: 5vw; /* Increase font size for better readability */
+        width: 98vw;
+        height: auto;
+        font-size: 5vw;
     }
-    
+
     .mojeveci {
-        flex-direction: column; /* Stack items vertically */
-        width: 98vw; /* Full width */
-        height: auto; /* Allow height to adjust */
+        flex-direction: column;
+        width: 98vw;
+        height: auto;
     }
-    
+
     .aboutMePreview,
     .contactsPreview,
     .projectsPreview,
     .tasksPreview {
-        width: calc(100% - 2%); /* Full width for each item */
-        height: 40vh; /* Adjust height for better visibility */
-        margin: 1%; /* Maintain margin for spacing */
+        width: calc(100% - 2%);
+        height: 40vh;
+        margin: 1%;
     }
-    .aboutMePreview:hover,
-    .contactsPreview:hover,
-    .projectsPreview:hover,
-    .tasksPreview:hover {    
-    
-    width: calc(100% - 2%); /* Full width for each item */
-    height: 40vh; /* Adjust height for better visibility */
-    margin: 1%; /* Maintain margin for spacing */
-    background-color: darkcyan;
-    transition: ease-in-out 1s;
-    
-    
-    
 }
-}
-
