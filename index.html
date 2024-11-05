@@ -34,18 +34,18 @@
             
         </div>
 
-        <div class="mojeveci">
+        <div class="mojeveci" >
 
-            <div class="aboutMePreview">
+            <div class="aboutMePreview" onclick="toggleActive(this)">
                     O mě
             </div>
-            <div class="contactsPreview">
+            <div class="contactsPreview" onclick="toggleActive(this)">
                 Kontakty
             </div>
-            <div class="projectsPreview">
+            <div class="projectsPreview" onclick="toggleActive(this)">
                 Projekty
             </div>
-            <div class="tasksPreview">
+            <div class="tasksPreview" onclick="toggleActive(this)">
                 Úkoly
             </div>
 
@@ -77,6 +77,60 @@
                 box.classList.remove('active');
                 box.style.display = 'flex'; // Zobrazit všechny boxy znovu
             });
+        });
+
+        function toggleActive(element) {
+            // Remove the active class from all preview divs
+            document.querySelectorAll('.aboutMePreview, .contactsPreview, .projectsPreview, .tasksPreview')
+                .forEach(div => {
+                    div.classList.remove('active');
+                    resetContent(div); // Reset content
+                });
+            
+            // Add the active class to the clicked div
+            element.classList.add('active');
+    
+            // Change content based on which div is active
+            if (element.classList.contains('aboutMePreview')) {
+                element.innerHTML = "My Name is Ondřej Hruška,  I am sutednt at SPŠ Třebíč, information technology 4th year\n.";
+
+            } else if (element.classList.contains('contactsPreview')) {
+                element.innerHTML = "Updated Contacts Content";
+            } else if (element.classList.contains('projectsPreview')) {
+                element.innerHTML = "Updated Projects Content";
+            } else if (element.classList.contains('tasksPreview')) {
+                element.innerHTML = "Updated Tasks Content";
+            }
+        }
+    
+        function resetContent(element) {
+            // Reset the content back to the original based on class
+            if (element.classList.contains('aboutMePreview')) {
+                element.innerHTML = "O mě";
+            } else if (element.classList.contains('contactsPreview')) {
+                element.innerHTML = "Kontakty";
+            } else if (element.classList.contains('projectsPreview')) {
+                element.innerHTML = "Projekty";
+            } else if (element.classList.contains('tasksPreview')) {
+                element.innerHTML = "Úkoly";
+            }
+        }
+    
+        // Click listener for the entire document
+        document.addEventListener('click', function(event) {
+            // Check if the clicked element is not one of the preview divs
+            if (!event.target.classList.contains('aboutMePreview') && 
+                !event.target.classList.contains('contactsPreview') && 
+                !event.target.classList.contains('projectsPreview') && 
+                !event.target.classList.contains('tasksPreview')) {
+                
+                // Remove active class and reset content for all preview divs
+                document.querySelectorAll('.aboutMePreview, .contactsPreview, .projectsPreview, .tasksPreview')
+                    .forEach(div => {
+                        div.classList.remove('active');
+                        resetContent(div);
+                    });
+            }
         });
     </script>
     

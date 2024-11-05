@@ -1,5 +1,6 @@
 body {
     background-color: black;
+    margin: 0;
 }
 
 .jmeno {
@@ -16,12 +17,10 @@ body {
 .layout {
     display: flex;
     flex: auto;
-}
-
-@media (max-width: 480px) {
-    .layout {
-        flex-direction: column;
-    }
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu {
@@ -38,7 +37,6 @@ body {
 }
 
 .mojeveci {
-    padding-left: 1%;
     color: white;
     width: 98vw;
     height: 100vh;
@@ -47,6 +45,7 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    gap: 1%;
 }
 
 .aboutMePreview,
@@ -54,40 +53,45 @@ body {
 .projectsPreview,
 .tasksPreview {
     display: flex;
-    height: 45vh;
     width: calc(48% - 2%);
+    height: 45vh;
     margin: 1%;
     border-radius: 10px;
     border: 1px solid rgb(255, 255, 255);
     justify-content: center;
     align-items: center;
     font-size: 8vw;
-    transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
-    cursor: pointer; /* Změna kurzoru na pointer */
+    transition: background-color 0.5s ease, transform 0.5s ease;
+    cursor: pointer;
 }
 
-.aboutMePreview:hover,
-.contactsPreview:hover,
-.projectsPreview:hover,
-.tasksPreview:hover {
+/* Hover effect */
+.aboutMePreview:hover:not(.active),
+.contactsPreview:hover:not(.active),
+.projectsPreview:hover:not(.active),
+.tasksPreview:hover:not(.active) {
     background-color: darkcyan;
-    /*transform: scale(1.05); /* Zvětšení divu při hoveru */
+    transform: scale(1.05);
 }
 
+/* Active class */
 .active {
-    position:static;
-    top: 50%;
-    left: 50%;
-    /*transform: translate(-50%, -50%); /* Centrování */
-    width: 80vw; /* Šířka zvětšeného divu */
-    height: 90vh; /* Výška zvětšeného divu */
-    background-color: darkcyan; /* Pozadí, když je div aktivní */
+    position:  relative;
+
+    top: 35%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    height: 70vh;
+    font-size: 2vw;
+    text-align: justify;
+    padding: 1vw;
+    background-color: darkcyan;
     z-index: 10;
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* Vertikální vycentrování obsahu */
-    align-items: center; /* Horizontální vycentrování obsahu */
-    transition: all 0.5s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
 }
 
 /* Responsive styles */
@@ -107,10 +111,33 @@ body {
     .tasksPreview {
         width: calc(90% - 2%);
         height: 30vh;
+        margin: 1%;
     }
+    
+     .active {
+        position:  relative;
+    
+         top: 35%;
+        left: 45%;
+        transform: translate(-50%, -50%);
+        width: 70vw;
+        height: 70vh;
+        background-color: darkcyan;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease;
+        font-size: 6vw;
+    text-align: justify;
+    padding: 1vw;
+    } 
 }
 
 @media (max-width: 480px) {
+    .layout{
+        flex-direction: column;
+    }
     .menu {
         width: 98vw;
         height: auto;
@@ -130,5 +157,24 @@ body {
         width: calc(100% - 2%);
         height: 40vh;
         margin: 1%;
+    }
+    .active{
+        position:  relative;
+    
+        top: 35%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        width: 70vw;
+        height: 70vh;
+        background-color: darkcyan;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease;
+        font-size: 7vw;
+        text-align: justify;
+        padding: 1vw;
+        
     }
 }
