@@ -1,0 +1,38 @@
+.block{
+    width: 200px;
+    height: 50px;
+    background-color: black;
+    border: green,solid;
+    display: flex;
+    margin: 10px;
+
+}
+
+.blocky{
+    margin: auto;
+    margin-top: 150px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+   
+    color: wheat;
+    flex-direction: row;
+}
+
+.main{
+    background-color: aqua;
+    height: 100vh;
+    width: 70vw;
+    text-align: center;
+    
+    margin: auto;
+    
+    justify-content: center;
+    
+}
+.prvniUkol{
+    background-color: lightblue;
+}
+.druhyUkol{
+    background-color: lightcoral;
+}

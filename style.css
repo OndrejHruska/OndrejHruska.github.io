@@ -1,180 +1,202 @@
+/* General Body Styling */
 body {
-    background-color: black;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #121212, #1a1a1a);
+    color: #e0e0e0;
     margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+    animation: fadeInBody 1s ease;
 }
 
-.jmeno {
-    width: 98vw;
+@keyframes fadeInBody {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Header with a stylish gradient and shadow */
+header {
+    background: linear-gradient(135deg, #1f1f1f, #333);
+    color: #ffffff;
     text-align: center;
-    font-size: 5.7vw;
-    height: 100vh;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 3em 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background 0.5s ease, transform 0.3s ease;
+    margin-bottom: 3em; /* Add space below header */
 }
 
-.layout {
-    display: flex;
-    flex: auto;
+header:hover {
+    transform: translateY(-5px);
+}
+
+header h1 {
+    font-size: 2.8em;
+    color: #e0e0e0;
+    margin: 0;
+    animation: slideInFromLeft 1s ease;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #b0b0b0;
+    margin-top: 0.5em;
+}
+
+/* Slide-in animation for the header text */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Section Styling with Shadow and Hover Effect */
+section {
+    padding: 3em;
+    max-width: 800px;
+    margin: 2em auto; /* Increased margin for more space between sections */
+    background: rgba(28, 28, 28, 0.85);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: scale(1.02);
+}
+
+/* Section Heading with Animated Border */
+section h2 {
+    font-size: 2em;
+    color: #e0e0e0;
+    margin-bottom: 1em; /* More space below heading */
+    position: relative;
+    padding-bottom: 0.3em;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
+    height: 2px;
+    background: linear-gradient(135deg, #5dade2, #333);
+    animation: borderExpand 0.5s ease;
 }
 
-.menu {
-    color: white;
-    width: 15vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 3.5vw;
-    text-align: center;
-    border-radius: 10px;
+@keyframes borderExpand {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
-.mojeveci {
-    color: white;
-    width: 98vw;
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    gap: 1%;
+/* List Styling */
+ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.aboutMePreview,
-.contactsPreview,
-.projectsPreview,
-.tasksPreview {
-    display: flex;
-    width: calc(48% - 2%);
-    height: 45vh;
-    margin: 1%;
-    border-radius: 10px;
-    border: 1px solid rgb(255, 255, 255);
-    justify-content: center;
-    align-items: center;
-    font-size: 8vw;
-    transition: background-color 0.5s ease, transform 0.5s ease;
+li {
+    padding: 0.5em 0;
+    position: relative;
+    padding-left: 1.5em;
+    transition: color 0.3s ease;
+}
+
+li:hover {
+    color: #5dade2;
+}
+
+li::before {
+    content: "•";
+    color: #5dade2;
+    position: absolute;
+    left: 0;
+    top: 0.3em;
+    font-size: 1.5em;
+}
+
+/* Content Expansion Animation */
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    margin-top: 1em;
+}
+
+.content.expand {
+    max-height: 1000px;
+    opacity: 1;
+}
+
+/* Stylish Button (already added) */
+button {
+    background: linear-gradient(135deg, #3a3a3a, #5dade2);
+    color: #ffffff;
+    border: none;
+    padding: 0.7em 1.5em;
+    margin-top: 1em;
     cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
-/* Hover effect */
-.aboutMePreview:hover:not(.active),
-.contactsPreview:hover:not(.active),
-.projectsPreview:hover:not(.active),
-.tasksPreview:hover:not(.active) {
-    background-color: darkcyan;
+button:hover {
+    background: linear-gradient(135deg, #5dade2, #3a3a3a);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
     transform: scale(1.05);
 }
 
-/* Active class */
-.active {
-    position:  relative;
-
-    top: 35%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    width: 70vw;
-    height: 70vh;
-    font-size: 2vw;
-    text-align: justify;
-    padding: 1vw;
-    background-color: darkcyan;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s ease;
+button:active {
+    transform: scale(0.98);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.4);
 }
 
-/* Responsive styles */
+button:focus {
+    outline: 2px solid #5dade2;
+    outline-offset: 4px;
+}
+
+/* Responsive Layout */
 @media (max-width: 768px) {
-    .menu {
-        width: 30vw;
-        font-size: 4vw;
+    header h1 {
+        font-size: 2.2em;
     }
 
-    .mojeveci {
-        width: 90vw;
+    section {
+        padding: 2em 1em;
+        margin: 2em 0; /* Adjust margins on smaller screens */
     }
-
-    .aboutMePreview,
-    .contactsPreview,
-    .projectsPreview,
-    .tasksPreview {
-        width: calc(90% - 2%);
-        height: 30vh;
-        margin: 1%;
-    }
-    
-     .active {
-        position:  relative;
-    
-         top: 35%;
-        left: 45%;
-        transform: translate(-50%, -50%);
-        width: 70vw;
-        height: 70vh;
-        background-color: darkcyan;
-        z-index: 10;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.5s ease;
-        font-size: 6vw;
-    text-align: justify;
-    padding: 1vw;
-    } 
 }
 
 @media (max-width: 480px) {
-    .layout{
-        flex-direction: column;
-    }
-    .menu {
-        width: 98vw;
-        height: auto;
-        font-size: 5vw;
+    header {
+        padding: 1.5em;
     }
 
-    .mojeveci {
-        flex-direction: column;
-        width: 98vw;
-        height: auto;
+    header h1 {
+        font-size: 1.8em;
     }
 
-    .aboutMePreview,
-    .contactsPreview,
-    .projectsPreview,
-    .tasksPreview {
-        width: calc(100% - 2%);
-        height: 40vh;
-        margin: 1%;
-    }
-    .active{
-        position:  relative;
-    
-        top: 35%;
-        left: 40%;
-        transform: translate(-50%, -50%);
-        width: 70vw;
-        height: 70vh;
-        background-color: darkcyan;
-        z-index: 10;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.5s ease;
-        font-size: 7vw;
-        text-align: justify;
-        padding: 1vw;
-        
+    section {
+        padding: 1.5em 1em;
+        margin: 2em 0;
     }
 }

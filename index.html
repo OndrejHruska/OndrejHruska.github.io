@@ -3,138 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/favicon.jfif">
+    <title>Your Name - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    
-    <title>Ondřej Hruška</title>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<body> 
-   
-   
+<body>
+    <header>
+        <h1>Ondřej Hruška</h1>
+        <p>Welcome to my interactive portfolio!</p>
+    </header>
 
-    
-      <div class="jmeno">
-       <span> Ondřej Hruška</span>
-    </div>
-    <div class="layout">
-        <div class="menu">
-            <div class="aboutMe">
-                O mě
-            </div>
-            <div class="contacts">
-                Kontakty
-            </div>
-            <div class="projects">
-                Projekty
-            </div>
-            <div class="tasks">
-                Úkoly
-            </div>
-            
-        </div>
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <button onclick="toggleSection('about-content')">Expand</button>
+        <div id="about-content" class="content">
+            <p>Hello, my name is Ondřej Hruška. I am a student at <a href="https://www.spst.cz" target="_blank">SPŠ Třebíč</a> with a passion for creating innovative and user-friendly applications.</p>
+            <p>In my free time I like to play video games,  watch movies or hang out with friends.</p>
+            <br>
+            <p></p>
 
-        <div class="mojeveci" >
-
-            <div class="aboutMePreview" onclick="toggleActive(this)">
-                    O mě
-            </div>
-            <div class="contactsPreview" onclick="toggleActive(this)">
-                Kontakty
-            </div>
-            <div class="projectsPreview" onclick="toggleActive(this)">
-                Projekty
-            </div>
-            <div class="tasksPreview" onclick="toggleActive(this)">
-                Úkoly
-            </div>
 
         </div>
-    </div>
-        
-    
-    <script>
-        const boxes = document.querySelectorAll('.mojeveci > div');
+    </section>
 
-        boxes.forEach(box => {
-            box.addEventListener('click', function(event) {
-                event.stopPropagation();
+    <!-- Skills Section -->
+    <section id="tasks">
+        <h2>Tasks</h2>
+        <button onclick="toggleSection('tasks-content')">Expand</button>
+        <div id="tasks-content" class="content">
+            <ul>
+                <li><a href="ukoly/responsiveBlocks/index.html">Responsive Blocks</a></li>
+               
+            </ul>
+        </div>
+    </section>
 
-                // Zrušit aktivní třídu z všech boxů a skrýt je
-                boxes.forEach(b => {
-                    b.classList.remove('active');
-                    b.style.display = 'none'; // Skrýt ostatní boxy
-                });
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <button onclick="toggleSection('projects-content')">Expand</button>
+        <div id="projects-content" class="content">
+            <p>Some projects you have worked on.</p>
+        </div>
+    </section>
 
-                // Aktivní box a zobrazení
-                this.classList.add('active');
-                this.style.display = 'flex'; // Zobrazit aktivní box
-            });
-        });
-
-        document.addEventListener('click', function() {
-            boxes.forEach(box => {
-                box.classList.remove('active');
-                box.style.display = 'flex'; // Zobrazit všechny boxy znovu
-            });
-        });
-
-        function toggleActive(element) {
-            // Remove the active class from all preview divs
-            document.querySelectorAll('.aboutMePreview, .contactsPreview, .projectsPreview, .tasksPreview')
-                .forEach(div => {
-                    div.classList.remove('active');
-                    resetContent(div); // Reset content
-                });
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <button onclick="toggleSection('contact-content')">Expand</button>
+        <div id="contact-content" class="content">
+            <p>Email: <a href="mailto:hruska.ondra095@gmail.com" target="_blank"> hruska.ondra095@gmail.com</a></p>
+            <p>Phone: <a href="tel:+420 607 091 118">+420 607 091 118</a>
             
-            // Add the active class to the clicked div
-            element.classList.add('active');
-    
-            // Change content based on which div is active
-            if (element.classList.contains('aboutMePreview')) {
-                element.innerHTML = "My Name is Ondřej Hruška,  I am sutednt at SPŠ Třebíč, information technology 4th year\n.";
+        </div>
+    </section>
 
-            } else if (element.classList.contains('contactsPreview')) {
-                element.innerHTML = "Updated Contacts Content";
-            } else if (element.classList.contains('projectsPreview')) {
-                element.innerHTML = "Updated Projects Content";
-            } else if (element.classList.contains('tasksPreview')) {
-                element.innerHTML = "Updated Tasks Content";
-            }
-        }
-    
-        function resetContent(element) {
-            // Reset the content back to the original based on class
-            if (element.classList.contains('aboutMePreview')) {
-                element.innerHTML = "O mě";
-            } else if (element.classList.contains('contactsPreview')) {
-                element.innerHTML = "Kontakty";
-            } else if (element.classList.contains('projectsPreview')) {
-                element.innerHTML = "Projekty";
-            } else if (element.classList.contains('tasksPreview')) {
-                element.innerHTML = "Úkoly";
-            }
-        }
-    
-        // Click listener for the entire document
-        document.addEventListener('click', function(event) {
-            // Check if the clicked element is not one of the preview divs
-            if (!event.target.classList.contains('aboutMePreview') && 
-                !event.target.classList.contains('contactsPreview') && 
-                !event.target.classList.contains('projectsPreview') && 
-                !event.target.classList.contains('tasksPreview')) {
-                
-                // Remove active class and reset content for all preview divs
-                document.querySelectorAll('.aboutMePreview, .contactsPreview, .projectsPreview, .tasksPreview')
-                    .forEach(div => {
-                        div.classList.remove('active');
-                        resetContent(div);
-                    });
-            }
-        });
-    </script>
-    
-    
+    <script src="script.js"></script>
 </body>
-
 </html>
