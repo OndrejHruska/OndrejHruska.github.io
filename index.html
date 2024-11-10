@@ -1,64 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Name - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <h1>Ondřej Hruška</h1>
-        <p>Welcome to my interactive portfolio!</p>
+      <h1>Ondřej Hruška</h1>
+      <p>Welcome to my interactive portfolio!</p>
     </header>
 
     <!-- About Section -->
     <section id="about">
-        <h2>About Me</h2>
-        <button onclick="toggleSection('about-content')">Expand</button>
-        <div id="about-content" class="content">
-            <p>Hello, my name is Ondřej Hruška. I am a student at <a href="https://www.spst.cz" target="_blank">SPŠ Třebíč</a> with a passion for creating innovative and user-friendly applications.</p>
-            <p>In my free time I like to play video games,  watch movies or hang out with friends.</p>
-            <br>
-            <p></p>
-
-
-        </div>
+      <h2>About Me</h2>
+      <button onclick="toggleSection('about-content')">Expand</button>
+      <div id="about-content" class="content">
+        <p>
+          Hello, my name is Ondřej Hruška. I am a student at
+          <a href="https://www.spst.cz" target="_blank">SPŠ Třebíč</a> with a
+          passion for creating innovative and user-friendly applications.
+        </p>
+        <p>
+          In my free time I like to play video games, watch movies or hang out
+          with friends.
+        </p>
+        <br />
+        <p></p>
+      </div>
     </section>
 
     <!-- Skills Section -->
     <section id="tasks">
-        <h2>Tasks</h2>
-        <button onclick="toggleSection('tasks-content')">Expand</button>
-        <div id="tasks-content" class="content">
-            <ul>
-                <li><a href="ukoly/responsiveBlocks/index.html">Responsive Blocks</a></li>
-               
-            </ul>
-        </div>
+      <h2>Tasks</h2>
+      <button onclick="toggleSection('tasks-content')">Expand</button>
+      <div id="tasks-content" class="content">
+        <ul>
+          <li>
+            <a href="ukoly/responsiveBlocks/index.html">Responsive Blocks</a>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects">
-        <h2>Projects</h2>
-        <button onclick="toggleSection('projects-content')">Expand</button>
-        <div id="projects-content" class="content">
-            <p>Some projects you have worked on.</p>
-        </div>
+      <h2>Projects</h2>
+      <button onclick="toggleSection('projects-content')">Expand</button>
+      <div id="projects-content" class="content">
+        <p>Ihave worked on game with my friends called: Vicent's Dream.</p>
+        <p>Simple, yet fun game to play.</p>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2>Contact</h2>
-        <button onclick="toggleSection('contact-content')">Expand</button>
-        <div id="contact-content" class="content">
-            <p>Email: <a href="mailto:hruska.ondra095@gmail.com" target="_blank"> hruska.ondra095@gmail.com</a></p>
-            <p>Phone: <a href="tel:+420 607 091 118">+420 607 091 118</a>
-            
-        </div>
+      <h2>Contact</h2>
+      <button onclick="toggleSection('contact-content')">Expand</button>
+      <div id="contact-content" class="content">
+        <p>
+          Email:
+          <a href="mailto:hruska.ondra095@gmail.com" target="_blank">
+            hruska.ondra095@gmail.com</a
+          >
+        </p>
+        <p>Phone: <a href="tel:+420 607 091 118">+420 607 091 118</a></p>
+      </div>
     </section>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
