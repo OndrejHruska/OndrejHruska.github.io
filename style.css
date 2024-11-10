@@ -9,6 +9,9 @@ body {
     overflow-x: hidden;
     animation: fadeInBody 1s ease;
 }
+div p{
+    text-align: justify;
+}
 
 @keyframes fadeInBody {
     from {
