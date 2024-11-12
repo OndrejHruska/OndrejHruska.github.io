@@ -22,7 +22,7 @@ div p{
     }
 }
 
-/* Header with a stylish gradient and shadow */
+
 header {
     background: linear-gradient(135deg, #1f1f1f, #333);
     color: #ffffff;
@@ -50,7 +50,7 @@ header p {
     margin-top: 0.5em;
 }
 
-/* Slide-in animation for the header text */
+
 @keyframes slideInFromLeft {
     from {
         opacity: 0;
@@ -62,11 +62,11 @@ header p {
     }
 }
 
-/* Section Styling with Shadow and Hover Effect */
+
 section {
     padding: 3em;
     max-width: 800px;
-    margin: 2em auto; /* Increased margin for more space between sections */
+    margin: 2em auto;
     background: rgba(28, 28, 28, 0.85);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -77,11 +77,11 @@ section:hover {
     transform: scale(1.02);
 }
 
-/* Section Heading with Animated Border */
+
 section h2 {
     font-size: 2em;
     color: #e0e0e0;
-    margin-bottom: 1em; /* More space below heading */
+    margin-bottom: 1em; 
     position: relative;
     padding-bottom: 0.3em;
 }
@@ -106,7 +106,7 @@ section h2::after {
     }
 }
 
-/* List Styling */
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -132,7 +132,7 @@ li::before {
     font-size: 1.5em;
 }
 
-/* Content Expansion Animation */
+
 .content {
     max-height: 0;
     overflow: hidden;
@@ -146,7 +146,7 @@ li::before {
     opacity: 1;
 }
 
-/* Stylish Button (already added) */
+
 button {
     background: linear-gradient(135deg, #3a3a3a, #5dade2);
     color: #ffffff;
@@ -185,7 +185,7 @@ button:focus {
 
     section {
         padding: 2em 1em;
-        margin: 2em 0; /* Adjust margins on smaller screens */
+        margin: 2em 0; 
     }
 }
 
@@ -203,4 +203,3 @@ button:focus {
         margin: 2em 0;
     }
 }
-/*helůlp*/
